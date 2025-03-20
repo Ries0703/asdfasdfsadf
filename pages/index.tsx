@@ -42,6 +42,11 @@ const Home: NextPage = () => {
             <p>Email: your.email@example.com</p>
           </div>
         </div>
+        
+        <a href="/profile/manage" className={styles.card} style={{marginTop: "2rem"}}>
+          <h2>Quản lý Profile &rarr;</h2>
+          <p>Chỉnh sửa thông tin cá nhân của bạn</p>
+        </a>
       </main>
     </div>
   );
