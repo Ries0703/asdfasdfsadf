@@ -1,54 +1,78 @@
 
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { Container, Typography, Grid, Paper, Box, Button, Link } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const Item = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(3),
+  textAlign: 'center',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+}));
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <Container maxWidth="lg">
       <Head>
         <title>My Personal Page</title>
         <meta name="description" content="Welcome to my personal page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Xin chào, tôi là <span className={styles.highlight}>Your Name</span>
-        </h1>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h2" component="h1" gutterBottom align="center">
+          Xin chào, tôi là <Box component="span" sx={{ color: 'primary.main' }}>Your Name</Box>
+        </Typography>
 
-        <p className={styles.description}>
+        <Typography variant="h5" component="h2" gutterBottom align="center" color="text.secondary">
           Web Developer & Designer
-        </p>
+        </Typography>
 
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h2>Về tôi &rarr;</h2>
-            <p>Tôi là một lập trình viên với niềm đam mê công nghệ và sáng tạo.</p>
-          </div>
+        <Grid container spacing={3} sx={{ mt: 4 }}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Item>
+              <Typography variant="h6" gutterBottom>Về tôi</Typography>
+              <Typography>Tôi là một lập trình viên với niềm đam mê công nghệ và sáng tạo.</Typography>
+            </Item>
+          </Grid>
 
-          <div className={styles.card}>
-            <h2>Kỹ năng &rarr;</h2>
-            <p>React, Next.js, TypeScript, CSS, HTML</p>
-          </div>
+          <Grid item xs={12} sm={6} md={3}>
+            <Item>
+              <Typography variant="h6" gutterBottom>Kỹ năng</Typography>
+              <Typography>React, Next.js, TypeScript, CSS, HTML</Typography>
+            </Item>
+          </Grid>
 
-          <div className={styles.card}>
-            <h2>Dự án &rarr;</h2>
-            <p>Các dự án cá nhân và đóng góp của tôi.</p>
-          </div>
+          <Grid item xs={12} sm={6} md={3}>
+            <Item>
+              <Typography variant="h6" gutterBottom>Dự án</Typography>
+              <Typography>Các dự án cá nhân và đóng góp của tôi.</Typography>
+            </Item>
+          </Grid>
 
-          <div className={styles.card}>
-            <h2>Liên hệ &rarr;</h2>
-            <p>Email: your.email@example.com</p>
-          </div>
-        </div>
-        
-        <a href="/profile/manage" className={styles.card} style={{marginTop: "2rem"}}>
-          <h2>Quản lý Profile &rarr;</h2>
-          <p>Chỉnh sửa thông tin cá nhân của bạn</p>
-        </a>
-      </main>
-    </div>
+          <Grid item xs={12} sm={6} md={3}>
+            <Item>
+              <Typography variant="h6" gutterBottom>Liên hệ</Typography>
+              <Typography>Email: your.email@example.com</Typography>
+            </Item>
+          </Grid>
+        </Grid>
+
+        <Box sx={{ mt: 4, textAlign: 'center' }}>
+          <Button
+            variant="contained"
+            component={Link}
+            href="/profile/manage"
+            size="large"
+          >
+            Quản lý Profile
+          </Button>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
