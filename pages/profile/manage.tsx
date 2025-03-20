@@ -38,8 +38,9 @@ const ProfileManage: NextPage = () => {
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formGroup}>
-            <label>Tên:</label>
+            <label htmlFor="name">Tên:</label>
             <input
+              id="name"
               type="text"
               name="name"
               value={profile.name}
@@ -48,8 +49,9 @@ const ProfileManage: NextPage = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label>Chức danh:</label>
+            <label htmlFor="title">Chức danh:</label>
             <input
+              id="title"
               type="text"
               name="title" 
               value={profile.title}
@@ -58,8 +60,9 @@ const ProfileManage: NextPage = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label>Giới thiệu:</label>
+            <label htmlFor="about">Giới thiệu:</label>
             <textarea
+              id="about"
               name="about"
               value={profile.about}
               onChange={handleChange}
@@ -67,8 +70,9 @@ const ProfileManage: NextPage = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label>Kỹ năng:</label>
+            <label htmlFor="skills">Kỹ năng:</label>
             <input
+              id="skills"
               type="text"
               name="skills"
               value={profile.skills}
@@ -77,8 +81,9 @@ const ProfileManage: NextPage = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label>Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
+              id="email"
               type="email"
               name="email"
               value={profile.email}
